@@ -28,4 +28,8 @@
 
 // Include the shared functions.
 
-require_once plugin_dir_path( __FILE__ ) . 'inc/shared.php';
+//require_once plugin_dir_path( __FILE__ ) . 'inc/shared.php';
+
+require_once plugin_dir_path( __FILE__ ) . 'inc/get-settings.php';
+
+require_once plugin_dir_path( __FILE__ ) . 'inc/add-to-content.php';
