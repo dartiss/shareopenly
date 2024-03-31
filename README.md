@@ -1,1 +1,1 @@
-# share-openly
+# Share Openly
