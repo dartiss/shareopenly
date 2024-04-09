@@ -1,4 +1,4 @@
-=== Share Openly ===
+=== ShareOpenly ===
 Contributors: dartiss
 Tags: share, sharing, social media, mastodon, bluesky
 Requires at least: 4.6
@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The official plugin for [Share Openly](https://shareopenly.org/) - adding modern, open social media sharing links to your website.
+The official plugin for [ShareOpenly](https://shareopenly.org/) - adding modern, open social media sharing links to your website.
 
 == Description ==
 
@@ -16,9 +16,9 @@ You know all those “share to Facebook” / “share to Twitter” links you se
 
 Social media has evolved over the last year, yet nobody has “share to” links for Mastodon, Bluesky, Threads, etc. There have been a few attempts to create “share to Mastodon” buttons, but they haven’t taken the larger breadth of the new social media landscape into account.
 
-This is where Share Openly comes in.
+This is where ShareOpenly comes in.
 
-Activate this plugin and, at the bottom of every post and/or page on your site, you’ll see a “share to social media” button. If you click it, you’ll be taken to a page that shows a number of modern, social media sites (see the first screenshot). You can select one of the pre-set sites in the list, and you’ll be taken to share a post there. But if you, for example, have a Mastodon instance, or a Known site, or an indieweb site at a different domain, you can enter that domain in the box, and Share Openly will try and find a way to let you share the page with that site.
+Activate this plugin and, at the bottom of every post and/or page on your site, you’ll see a “share to social media” button. If you click it, you’ll be taken to a page that shows a number of modern, social media sites (see the first screenshot). You can select one of the pre-set sites in the list, and you’ll be taken to share a post there. But if you, for example, have a Mastodon instance, or a Known site, or an indieweb site at a different domain, you can enter that domain in the box, and ShareOpenly will try and find a way to let you share the page with that site.
 
 ShareOpenly will do a few things first:
 
@@ -32,12 +32,12 @@ Once you’ve shared to a site, the next time you visit ShareOpenly, it will be 
 
 == Installation ==
 
-Share Openly can be found and installed via the Plugin menu within WordPress administration (Plugins -> Add New). Alternatively, it can be downloaded from WordPress.org and installed manually...
+ShareOpenly can be found and installed via the Plugin menu within WordPress administration (Plugins -> Add New). Alternatively, it can be downloaded from WordPress.org and installed manually...
 
 1. Upload the entire `share-openly` folder to your `wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress administration.
 
-Voila! It's ready to go. By default it will add a link to the bottom of all posts. To change this, or the priority on the page, then head to Settings -> Discussion and look for the "Share Openly" heading.
+Voila! It's ready to go. By default it will add a link to the bottom of all posts. To change this, or the priority on the page, then head to Settings -> Discussion and look for the "ShareOpenly" heading.
 
 == Frequently Asked Questions ==
 

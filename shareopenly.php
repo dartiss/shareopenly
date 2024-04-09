@@ -2,11 +2,11 @@
 /**
  * Plugin Name
  *
- * @package           share-openly
+ * @package           shareopenly
  * @author            David Artiss
  * @license           GPL-2.0-or-later
  *
- * Plugin Name:       Share Openly
+ * Plugin Name:       ShareOpenly
  * Plugin URI:        https://wordpress.org/plugins/plugin-name/
  * Description:       Plugin description
  * Version:           1.0
