@@ -7,14 +7,14 @@
  * @license           GPL-2.0-or-later
  *
  * Plugin Name:       ShareOpenly
- * Plugin URI:        https://wordpress.org/plugins/plugin-name/
- * Description:       Plugin description
+ * Plugin URI:        https://wordpress.org/plugins/shareopenly/
+ * Description:       The official plugin for ShareOpenly, adding modern, open social media sharing links to your website.
  * Version:           1.0
  * Requires at least: 4.6
  * Requires PHP:      8.0
  * Author:            David Artiss
  * Author URI:        https://artiss.blog
- * Text Domain:       tube-alloys
+ * Text Domain:       shareopenly
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  *
@@ -26,9 +26,15 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
+// Define global to hold the plugin base file name.
+
+if ( ! defined( 'SHAREOPENLY_PLUGIN_BASE' ) ) {
+	define( 'SHAREOPENLY_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+}
+
 // Include the shared functions.
 
-//require_once plugin_dir_path( __FILE__ ) . 'inc/shared.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/shared.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'inc/get-settings.php';
 

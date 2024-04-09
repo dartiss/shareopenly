@@ -4,7 +4,7 @@
  *
  * This is the code that adds the sharing links to the bottom of the content.
  *
- * @package plugin-slug
+ * @package shareopenly
  */
 
 /**
