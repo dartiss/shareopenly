@@ -1,6 +1,6 @@
 === ShareOpenly ===
 Contributors: dartiss
-Tags: share, sharing, social media, mastodon, bluesky
+Tags: share, sharing, social media, mastodon, threads
 Requires at least: 4.6
 Tested up to: 6.5
 Requires PHP: 8.0
@@ -34,20 +34,27 @@ Once you’ve shared to a site, the next time you visit ShareOpenly, it will be 
 
 ShareOpenly can be found and installed via the Plugin menu within WordPress administration (Plugins -> Add New). Alternatively, it can be downloaded from WordPress.org and installed manually...
 
-1. Upload the entire `share-openly` folder to your `wp-content/plugins/` directory.
+1. Upload the entire `shareopenly` folder to your `wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress administration.
 
-Voila! It's ready to go. By default it will add a link to the bottom of all posts. To change this, or the priority on the page, then head to Settings -> Discussion and look for the "ShareOpenly" heading.
-
-== Frequently Asked Questions ==
-
-= A question? =
-
-An answer.
+Voila! It's ready to go. By default it will add a link to the bottom of all posts. To change this, the sharing text or the priority on the page, then head to Settings -> Discussion and look for the "ShareOpenly" heading.
 
 == Screenshots ==
 
-1. Stuff
+1. An example of the settings screen for the plugin
+2. An example of how a sharing link might appear at the bottom of a post
+
+== Frequently Asked Questions ==
+
+= How can I let ShareOpenly know it can share to my social web platform? =
+
+ShareOpenly knows about most major social networks, as well as decentralized platforms like Mastodon, Bluesky, and Known. However, if ShareOpenly is having trouble sharing to your platform, and if your platform supports a share intent, you can add the following metatag to your page headers:
+
+`<link rel="share-url" href="https://your-site/share/intent?text={text}">`
+
+Where `https://your-site/share/intent?text=` is the URL of your share intent.
+
+The special keyword `{text}` will be replaced with the URL and share text.
 
 == Changelog ==
 

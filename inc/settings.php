@@ -18,21 +18,21 @@ function sho_get_settings() {
 
 	// Get the post type.
 
-	$settings['type'] = get_option( 'shareopenly_type' );
+	$settings['type'] = esc_html( get_option( 'shareopenly_type' ) );
 	if ( ! $settings['type'] ) {
 		$settings['type'] = 'post';
 	}
 
 	// Get the share text.
 
-	$settings['text'] = get_option( 'shareopenly_text' );
+	$settings['text'] = esc_attr( get_option( 'shareopenly_text' ) );
 	if ( ! $settings['text'] ) {
 		$settings['text'] = __( 'Share this post on social media.', 'shareopenly' );
 	}
 
 	// Get the output priority.
 
-	$settings['priority'] = get_option( 'shareopenly_priority' );
+	$settings['priority'] = esc_attr( get_option( 'shareopenly_priority' ) );
 	if ( ! $settings['priority'] ) {
 		$settings['priority'] = 10;
 	}
@@ -47,17 +47,17 @@ function sho_get_settings() {
  */
 function sho_settings_init() {
 
-	add_settings_section( 'shareopenly_section', __( 'ShareOpenly', 'shareopenly' ), function () {}, 'general' );
+	add_settings_section( 'shareopenly_section', __( 'ShareOpenly', 'shareopenly' ), function () {}, 'discussion' );
 
-	add_settings_field( 'shareopenly_type', __( 'Sharing link location', 'shareopenly' ), 'shareopenly_type_callback', 'general', 'shareopenly_section', array( 'label_for' => 'shareopenly_type' ) );
+	add_settings_field( 'shareopenly_type', __( 'Sharing link location', 'shareopenly' ), 'shareopenly_type_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_type' ) );
 
 	register_setting( 'general', 'shareopenly_type' );
 
-	add_settings_field( 'shareopenly_text', __( 'Share Text', 'shareopenly' ), 'shareopenly_text_callback', 'general', 'shareopenly_section', array( 'label_for' => 'shareopenly_text' ) );
+	add_settings_field( 'shareopenly_text', __( 'Share Text', 'shareopenly' ), 'shareopenly_text_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_text' ) );
 
 	register_setting( 'general', 'shareopenly_text' );
 
-	add_settings_field( 'shareopenly_priority', __( 'Priority', 'shareopenly' ), 'shareopenly_priority_callback', 'general', 'shareopenly_section', array( 'label_for' => 'shareopenly_priority' ) );
+	add_settings_field( 'shareopenly_priority', __( 'Priority', 'shareopenly' ), 'shareopenly_priority_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_priority' ) );
 
 	register_setting( 'general', 'shareopenly_priority' );
 }
