@@ -38,7 +38,7 @@ function sho_add_to_content( $content ) {
 		global $wp;
 		$url = home_url( add_query_arg( array(), $wp->request ) );
 
-		$content .= '<div class="shareopenly"><span class="dashicons dashicons-share"></span>&nbsp;<a href="https://shareopenly.org/share/?url=' . $url . '&text=' . $title . '">' . $settings['text'] . '</a></div>';
+		$content .= '<div class="shareopenly"><span class="dashicons dashicons-share" style="vertical-align: middle;"></span>&nbsp;<a href="https://shareopenly.org/share/?url=' . $url . '&text=' . $title . '">' . $settings['text'] . '</a></div>';
 	}
 
 	return $content;
