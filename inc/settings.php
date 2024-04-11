@@ -1,14 +1,14 @@
 <?php
 /**
- * Getting settings
+ * Settings functions
  *
- * This is the code that adds the sharing links to the bottom of the content.
+ * Assorted functions to add and create settings.
  *
  * @package plugin-slug
  */
 
 /**
- * Add disclosure messages.
+ * Get the settings
  *
  * @return   array     Settings array.
  */
@@ -51,15 +51,15 @@ function sho_settings_init() {
 
 	add_settings_field( 'shareopenly_type', __( 'Sharing link location', 'shareopenly' ), 'shareopenly_type_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_type' ) );
 
-	register_setting( 'general', 'shareopenly_type' );
+	register_setting( 'discussion', 'shareopenly_type' );
 
 	add_settings_field( 'shareopenly_text', __( 'Share Text', 'shareopenly' ), 'shareopenly_text_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_text' ) );
 
-	register_setting( 'general', 'shareopenly_text' );
+	register_setting( 'discussion', 'shareopenly_text' );
 
 	add_settings_field( 'shareopenly_priority', __( 'Priority', 'shareopenly' ), 'shareopenly_priority_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_priority' ) );
 
-	register_setting( 'general', 'shareopenly_priority' );
+	register_setting( 'discussion', 'shareopenly_priority' );
 }
 
 add_action( 'admin_init', 'sho_settings_init' );
@@ -75,9 +75,9 @@ function shareopenly_type_callback() {
 	$type    = $options['type'];
 
 	echo '<select name="shareopenly_type">';
-	echo '<option ' . selected( 'post', $type, false ) . ' value="post">' . esc_html__( 'Posts', 'shareopenly' ) . '</option>';
+	echo '<option ' . selected( 'post', $type, false ) . ' value="post">' . esc_html__( 'Posts', 'shareopesettnly' ) . '</option>';
 	echo '<option ' . selected( 'page', $type, false ) . ' value="page">' . esc_html__( 'Pages', 'shareopenly' ) . '</option>';
-	echo '<option ' . selected( 'postpage', $type, false ) . ' value="post">' . esc_html__( 'Posts & Pages', 'shareopenly' ) . '</option>';
+	echo '<option ' . selected( 'postpage', $type, false ) . ' value="postpage">' . esc_html__( 'Posts & Pages', 'shareopenly' ) . '</option>';
 	echo '</select>';
 }
 
