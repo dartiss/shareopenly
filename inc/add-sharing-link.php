@@ -8,7 +8,7 @@
  */
 
 /**
- * Add disclosure messages.
+ * Add sharing links to bottom of content.
  *
  * @param    string $content  Post/page content.
  * @return   string           Updated content.
@@ -21,6 +21,7 @@ function sho_add_to_content( $content ) {
 
 	$post = false;
 	$page = false;
+
 	if ( 'post' === $settings['type'] || 'postpage' === $settings['type'] ) {
 		$post = true;
 	}
@@ -30,7 +31,7 @@ function sho_add_to_content( $content ) {
 
 	// Now generate the shared output if we're on the right output type.
 
-	if ( ( is_single() && $settings['type'] ) || ( is_page() && $settings['page'] ) ) {
+	if ( ( is_single() && $post ) || ( is_page() && $page ) ) {
 
 		$title = rawurlencode( esc_html( get_the_title() ) );
 
