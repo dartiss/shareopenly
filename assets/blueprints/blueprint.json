@@ -1,5 +1,5 @@
 {
-    "landingPage": "\/wp-admin\/?p=1",
+    "landingPage": "\/?p=1",
     "preferredVersions": {
         "php": "8.0",
         "wp": "latest"
