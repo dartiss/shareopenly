@@ -7,15 +7,21 @@
  * @package shareopenly
  */
 
+// Exit if accessed directly.
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Add sharing links to bottom of content.
  *
  * @param    string $content  Post/page content.
  * @return   string           Updated content.
  */
-function sho_add_to_content( $content ) {
+function shareopenly_add_to_content( $content ) {
 
-	$settings = sho_get_settings();
+	$settings = shareopenly_get_settings();
 
 	// Work out if posts or pages are needed.
 
@@ -44,6 +50,6 @@ function sho_add_to_content( $content ) {
 	return $content;
 }
 
-$settings = sho_get_settings();
+$settings = shareopenly_get_settings();
 
-add_filter( 'the_content', 'sho_add_to_content', $settings['priority'] );
+add_filter( 'the_content', 'shareopenly_add_to_content', $settings['priority'] );
