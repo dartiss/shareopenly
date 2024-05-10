@@ -7,6 +7,12 @@
  * @package shareopenly
  */
 
+// Exit if accessed directly.
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Add meta to plugin details
  *
@@ -17,7 +23,7 @@
  * @param    string $file   File in use.
  * @return   string         Links, now with settings added.
  */
-function sho_plugin_meta( $links, $file ) {
+function shareopenly_plugin_meta( $links, $file ) {
 
 	if ( false !== strpos( $file, 'shareopenly.php' ) ) {
 
@@ -33,7 +39,7 @@ function sho_plugin_meta( $links, $file ) {
 	return $links;
 }
 
-add_filter( 'plugin_row_meta', 'sho_plugin_meta', 10, 2 );
+add_filter( 'plugin_row_meta', 'shareopenly_plugin_meta', 10, 2 );
 
 /**
  * Modify actions links.
@@ -45,7 +51,7 @@ add_filter( 'plugin_row_meta', 'sho_plugin_meta', 10, 2 );
  * @param    string $plugin_file  The plugin.
  * @return   string               Actions, now with deactivation removed!
  */
-function sho_action_links( $actions, $plugin_file ) {
+function shareopenly_action_links( $actions, $plugin_file ) {
 
 	// Make sure we only perform actions for this specific plugin!
 	if ( strpos( $plugin_file, 'shareopenly.php' ) !== false ) {
@@ -59,7 +65,7 @@ function sho_action_links( $actions, $plugin_file ) {
 	return $actions;
 }
 
-add_filter( 'plugin_action_links', 'sho_action_links', 10, 2 );
+add_filter( 'plugin_action_links', 'shareopenly_action_links', 10, 2 );
 
 /**
  * WordPress Fork Check
@@ -68,7 +74,7 @@ add_filter( 'plugin_action_links', 'sho_action_links', 10, 2 );
  *
  * @version 1.0
  */
-function sho_fork_check() {
+function shareopenly_fork_check() {
 
 	// Check for a fork.
 
@@ -101,4 +107,4 @@ function sho_fork_check() {
 	}
 }
 
-add_action( 'admin_init', 'sho_fork_check' );
+add_action( 'admin_init', 'shareopenly_fork_check' );

@@ -26,6 +26,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
+// Exit if accessed directly.
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Define global to hold the plugin base file name.
 
 if ( ! defined( 'SHAREOPENLY_PLUGIN_BASE' ) ) {

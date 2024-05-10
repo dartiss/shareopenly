@@ -7,12 +7,18 @@
  * @package plugin-slug
  */
 
+// Exit if accessed directly.
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Get the settings
  *
  * @return   array     Settings array.
  */
-function sho_get_settings() {
+function shareopenly_get_settings() {
 
 	$settings = array();
 
@@ -45,7 +51,7 @@ function sho_get_settings() {
  *
  * Add a field to the general settings screen for assorted options
  */
-function sho_settings_init() {
+function shareopenly_settings_init() {
 
 	add_settings_section( 'shareopenly_section', __( 'ShareOpenly', 'shareopenly' ), function () {}, 'discussion' );
 
@@ -62,7 +68,7 @@ function sho_settings_init() {
 	register_setting( 'discussion', 'shareopenly_priority' );
 }
 
-add_action( 'admin_init', 'sho_settings_init' );
+add_action( 'admin_init', 'shareopenly_settings_init' );
 
 /**
  * Type setting callback
@@ -71,7 +77,7 @@ add_action( 'admin_init', 'sho_settings_init' );
  */
 function shareopenly_type_callback() {
 
-	$options = sho_get_settings();
+	$options = shareopenly_get_settings();
 	$type    = $options['type'];
 
 	echo '<select name="shareopenly_type">';
@@ -88,7 +94,7 @@ function shareopenly_type_callback() {
  */
 function shareopenly_text_callback() {
 
-	$options = sho_get_settings();
+	$options = shareopenly_get_settings();
 	$text    = $options['text'];
 
 	echo '<input name="shareopenly_text" size="40" type="text" value="' . esc_attr( $text ) . '" />';
@@ -101,7 +107,7 @@ function shareopenly_text_callback() {
  */
 function shareopenly_priority_callback() {
 
-	$options = sho_get_settings();
+	$options = shareopenly_get_settings();
 	$type    = $options['priority'];
 
 	echo '<input name="shareopenly_priority" size="4" maxlength="4" type="text" value="' . esc_attr( $type ) . '" />';
