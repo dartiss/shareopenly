@@ -53,7 +53,7 @@ function shareopenly_get_settings() {
  */
 function shareopenly_settings_init() {
 
-	add_settings_section( 'shareopenly_section', __( 'ShareOpenly', 'shareopenly' ), function () {}, 'discussion' );
+	add_settings_section( 'shareopenly_section', __( 'ShareOpenly', 'shareopenly' ), 'shareopenly_settings_section', 'discussion' );
 
 	add_settings_field( 'shareopenly_type', __( 'Sharing link location', 'shareopenly' ), 'shareopenly_type_callback', 'discussion', 'shareopenly_section', array( 'label_for' => 'shareopenly_type' ) );
 
@@ -69,6 +69,16 @@ function shareopenly_settings_init() {
 }
 
 add_action( 'admin_init', 'shareopenly_settings_init' );
+
+/**
+ * Settings main section paragraph.
+ */
+function shareopenly_settings_section() {
+	printf(
+		'<p id="shareopenly-settings">%s</p>',
+		esc_html__( 'ShareOpenly allows to add a sharing link to the bottom of posts and pages on your site. Use the settings below to customize the display of that sharing link.', 'shareopenly' )
+	);
+}
 
 /**
  * Type setting callback

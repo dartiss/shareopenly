@@ -58,7 +58,7 @@ function shareopenly_action_links( $actions, $plugin_file ) {
 
 		// Add link to the settings page.
 		if ( current_user_can( 'manage_options' ) ) {
-			array_unshift( $actions, '<a href="options-discussion.php">' . __( 'Settings', 'shareopenly' ) . '</a>' );
+			array_unshift( $actions, '<a href="options-discussion.php#shareopenly-settings">' . __( 'Settings', 'shareopenly' ) . '</a>' );
 		}
 	}
 
