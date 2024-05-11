@@ -9,7 +9,7 @@
  * Plugin Name:       ShareOpenly
  * Plugin URI:        https://wordpress.org/plugins/shareopenly/
  * Description:       The official plugin for ShareOpenly, adding modern, open social media sharing links to your website.
- * Version:           1.0
+ * Version:           1.0.1
  * Requires at least: 4.6
  * Requires PHP:      8.0
  * Author:            David Artiss
