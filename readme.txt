@@ -47,7 +47,7 @@ ShareOpenly will do a few things first:
 
 1. If it’s on a “well-known” domain — eg, facebook.com — it’ll send you to the share page there.
 2. It checks to see if it can figure out if the site is on a known platform (currently Mastodon, Known, hosted WordPress, micro.blog, and a few others). If so — hooray! — it knows the share URL, and off you go.
-3. It looks for a `<link rel=“share-url”>` header tag on the page. The href attribute should be set to the share URL for the site, with template variables {text} and (optionally) {url} present where the share text and URL should go. (If {url} is not present, the URL to share will be appended at the end of the text.) If it’s there — yay! — we forward there, replacing {text} and {url} as appropriate.
+3. It looks for a `<link rel="share-url">` header tag on the page. The href attribute should be set to the share URL for the site, with template variables {text} and (optionally) {url} present where the share text and URL should go. (If {url} is not present, the URL to share will be appended at the end of the text.) If it’s there — yay! — we forward there, replacing {text} and {url} as appropriate.
 
 Once you’ve shared to a site, the next time you visit ShareOpenly, it will be in the quick links. 
 
@@ -79,4 +79,5 @@ I use semantic versioning, with the first release being 1.0
 == Upgrade Notice ==
 
 = 1.1 =
+
 * Now with custom post types!
