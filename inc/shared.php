@@ -68,22 +68,33 @@ function shareopenly_action_links( $actions, $plugin_file ) {
 add_filter( 'plugin_action_links', 'shareopenly_action_links', 10, 2 );
 
 /**
- * WordPress Fork Check
+ * WordPress Requirements Check
  *
- * Deactivate the plugin if an unsupported fork of WordPress is detected.
+ * Deactivate the plugin if certain requirements are not met.
  *
- * @version 1.0
+ * @version 1.2
  */
-function shareopenly_fork_check() {
+function shareopenly_requirements_check() {
+
+	$reason = '';
+
+	// Grab the plugin details.
+
+	$plugins = get_plugins();
+	$name    = $plugins[ SHAREOPENLY_PLUGIN_BASE ]['Name'];
 
 	// Check for a fork.
 
-	if ( function_exists( 'calmpress_version' ) || function_exists( 'classicpress_version' ) ) {
+	if ( function_exists( 'calmpress_version' ) || function_exists( 'classicpress_version' ) || defined( 'COSMIC_VERSION' ) ) {
 
-		// Grab the plugin details.
+		/* translators: 1: The plugin name. */
+		$reason .= '<li>' . sprintf( __( 'A fork of WordPress was detected. %1$s has not been tested on this fork and, as a consequence, the author will not provide any support.', 'shareopenly' ), $name ) . '</li>';
 
-		$plugins = get_plugins();
-		$name    = $plugins[ SHAREOPENLY_PLUGIN_BASE ]['Name'];
+	}
+
+	// If a requirement is not met, output the message and stop the plugin.
+
+	if ( '' !== $reason ) {
 
 		// Deactivate this plugin.
 
@@ -92,9 +103,7 @@ function shareopenly_fork_check() {
 		// Set up a message and output it via wp_die.
 
 		/* translators: 1: The plugin name. */
-		$message = '<p><b>' . sprintf( __( '%1$s has been deactivated', 'shareopenly' ), $name ) . '</b></p><p>' . __( 'Reason:', 'shareopenly' ) . '</p>';
-		/* translators: 1: The plugin name. */
-		$message .= '<ul><li>' . __( 'A fork of WordPress was detected.', 'shareopenly' ) . '</li></ul><p>' . sprintf( __( 'The author of %1$s will not provide any support until the above are resolved.', 'shareopenly' ), $name ) . '</p>';
+		$message = '<p><b>' . sprintf( __( '%1$s has been deactivated', 'shareopenly' ), $name ) . '</b></p><p>' . __( 'Reason:', 'shareopenly' ) . '</p><ul>' . $reason . '</ul>';
 
 		$allowed = array(
 			'p'  => array(),
@@ -107,4 +116,4 @@ function shareopenly_fork_check() {
 	}
 }
 
-add_action( 'admin_init', 'shareopenly_fork_check' );
+add_action( 'admin_init', 'shareopenly_requirements_check' );

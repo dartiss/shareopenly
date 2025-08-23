@@ -4,7 +4,7 @@
  *
  * Assorted functions to add and create settings.
  *
- * @package plugin-slug
+ * @package shareopenly
  */
 
 // Exit if accessed directly.
@@ -31,6 +31,7 @@ function shareopenly_get_settings() {
 	$settings['text'] = esc_attr( get_option( 'shareopenly_text' ) );
 	if ( ! $settings['text'] ) {
 		$settings['text'] = __( 'Share this post on social media.', 'shareopenly' );
+		add_option( 'shareopenly_text', $settings['text'] );
 	}
 
 	// Get the output priority.
@@ -38,6 +39,7 @@ function shareopenly_get_settings() {
 	$settings['priority'] = esc_attr( get_option( 'shareopenly_priority' ) );
 	if ( ! $settings['priority'] ) {
 		$settings['priority'] = 10;
+		add_option( 'shareopenly_priority', $settings['priority'] );
 	}
 
 	return $settings;
@@ -67,6 +69,11 @@ function shareopenly_get_post_types() {
 				$shareopenly_post_types = array( 'post', 'page' );
 				break;
 		}
+	}
+
+	// If the post types have changed, make sure to upate them.
+	if ( $support_post_types !== $shareopenly_post_types ) {
+		add_option( 'shareopenly_type', $shareopenly_post_types );
 	}
 
 	return $shareopenly_post_types;
@@ -109,7 +116,7 @@ function shareopenly_settings_section() {
 /**
  * Type setting callback
  *
- * Output the settings fields for selecting on which post types to display sharing link.
+ * Output the settings fields for selecting which post types to display sharing link.
  */
 function shareopenly_type_callback() {
 
@@ -120,8 +127,8 @@ function shareopenly_type_callback() {
 		<ul>
 		<?php foreach ( $post_types as $post_type ) : ?>
 			<li>
-				<input type="checkbox" id="shareopenly_type_<?php echo esc_attr( $post_type->name ); ?>" name="shareopenly_type[]" value="<?php echo esc_attr( $post_type->name ); ?>" <?php echo checked( in_array( $post_type->name, $support_post_types, true ) ); ?> />
-				<label for="shareopenly_type_<?php echo esc_attr( $post_type->name ); ?>"><?php echo esc_html( $post_type->label ); ?></label>
+				<input type="checkbox" id="shareopenly_type_<?php echo esc_html( $post_type->name ); ?>" name="shareopenly_type[]" value="<?php echo esc_html( $post_type->name ); ?>" <?php echo checked( in_array( $post_type->name, $support_post_types, true ) ); ?> />
+				<label for="shareopenly_type_<?php echo esc_html( $post_type->name ); ?>"><?php echo esc_html( $post_type->label ); ?></label>
 			</li>
 		<?php endforeach; ?>
 		</ul>
@@ -139,7 +146,7 @@ function shareopenly_text_callback() {
 	$options = shareopenly_get_settings();
 	$text    = $options['text'];
 
-	echo '<input name="shareopenly_text" size="40" type="text" value="' . esc_attr( $text ) . '" />';
+	echo '<input name="shareopenly_text" size="40" type="text" value="' . esc_html( $text ) . '" /><label for="shareopenly_text">' . esc_html( 'The sharing text that will be displayed' ) . '</label>';
 }
 
 /**
@@ -152,5 +159,5 @@ function shareopenly_priority_callback() {
 	$options = shareopenly_get_settings();
 	$type    = $options['priority'];
 
-	echo '<input name="shareopenly_priority" size="4" maxlength="4" type="text" value="' . esc_attr( $type ) . '" />';
+	echo '<input name="shareopenly_priority" min="1" max="9999" type="number" value="' . esc_html( $type ) . '" /><label for="shareopenly_text">' . esc_html( 'The priority of the sharing message on the page' ) . '</label>';
 }
