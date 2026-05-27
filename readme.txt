@@ -3,9 +3,9 @@ Contributors: dartiss, jeherve, mediaformat
 Donate link: https://artiss.blog/donate
 Tags: share, openly, social media, mastodon, threads
 Requires at least: 4.6
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 8.0
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 README revision: 1.0
@@ -35,7 +35,7 @@ If you would like to contribute to the code, report issues, request features or 
 * To contribute to the code, suggest enhancements or report bugs you can [do so on my GitHub repo](https://github.com/dartiss/shareopenly)
 * For translations, please [use GlotPress](https://translate.wordpress.org/projects/wp-plugins/shareopenly/)
 
-If you wish to disclose a security issue then I would ask that you do so responsibly. For example, you could [submit it via Wordfence](https://www.wordfence.com/threat-intel/vulnerabilities/submit/), which this plugin is registered with.
+If you wish to disclose a security issue then I would ask that you do so responsibly. For example, you could [submit it via Wordfence](https://www.wordfence.com/r/f54ee50200cc3f52/threat-intel/vulnerabilities/submit/), which this plugin is registered with.
 
 == Privacy ==
 
@@ -104,6 +104,10 @@ By default, the link that is displayed has an accessible name (although this can
 
 I use semantic versioning, with the first release being 1.0
 
+= 1.2.1 =
+* Enhancement: Fixed cross-site scripting (XSS) vulnerabilities ([CVE-2026-48094](https://www.cve.org/CVERecord?id=CVE-2026-48094)), as reported by [Blacksolo](https://github.com/blacksolo1)
+* Enhancement: Fixed a number of other, potential, security issues in the code too
+
 = 1.2 =
 * Enhancement: Added additional information to the README
 * Enhancement: Improved accessibility, performance and security across the plugin
@@ -125,5 +129,5 @@ I use semantic versioning, with the first release being 1.0
 
 == Upgrade Notice ==
 
-= 1.2 =
-* Assorted code quality improvements. Now more secure, accessible and performant!
+= 1.2.1 =
+* Fixed a reported security vulnerability, along with a number of other security changes

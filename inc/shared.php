@@ -32,7 +32,7 @@ function shareopenly_plugin_meta( $links, $file ) {
 			array( '<a href="https://github.com/dartiss/shareopenly">' . __( 'Github', 'shareopenly' ) . '</a>' ),
 			array( '<a href="https://wordpress.org/support/plugin/shareopenly">' . __( 'Support', 'shareopenly' ) . '</a>' ),
 			array( '<a href="https://artiss.blog/donate">' . __( 'Donate', 'shareopenly' ) . '</a>' ),
-			array( '<a href="https://wordpress.org/support/plugin/shareopenly/reviews/?filter=5" title="' . __( 'Rate the plugin on WordPress.org', 'shareopenly' ) . '" style="color: #ffb900">' . str_repeat( '<span class="dashicons dashicons-star-filled" style="font-size: 16px; width:16px; height: 16px"></span>', 5 ) . '</a>' ),
+			array( '<a href="' . esc_url( 'https://wordpress.org/support/plugin/shareopenly/reviews/' ) . '">' . __( 'Write a Review', 'text-domain' ) . '</a>' ),
 		);
 	}
 

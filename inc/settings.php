@@ -127,8 +127,8 @@ function shareopenly_type_callback() {
 		<ul>
 		<?php foreach ( $post_types as $post_type ) : ?>
 			<li>
-				<input type="checkbox" id="shareopenly_type_<?php echo esc_html( $post_type->name ); ?>" name="shareopenly_type[]" value="<?php echo esc_html( $post_type->name ); ?>" <?php echo checked( in_array( $post_type->name, $support_post_types, true ) ); ?> />
-				<label for="shareopenly_type_<?php echo esc_html( $post_type->name ); ?>"><?php echo esc_html( $post_type->label ); ?></label>
+				<input type="checkbox" id="shareopenly_type_<?php echo esc_attr( $post_type->name ); ?>" name="shareopenly_type[]" value="<?php echo esc_attr( $post_type->name ); ?>" <?php echo checked( in_array( $post_type->name, $support_post_types, true ) ); ?> />
+				<label for="shareopenly_type_<?php echo esc_attr( $post_type->name ); ?>"><?php echo esc_html( $post_type->label ); ?></label>
 			</li>
 		<?php endforeach; ?>
 		</ul>
@@ -146,7 +146,7 @@ function shareopenly_text_callback() {
 	$options = shareopenly_get_settings();
 	$text    = $options['text'];
 
-	echo '<input name="shareopenly_text" size="40" type="text" value="' . esc_html( $text ) . '" /><label for="shareopenly_text">' . esc_html( 'The sharing text that will be displayed' ) . '</label>';
+	echo '<input name="shareopenly_text" size="40" type="text" value="' . esc_attr( $text ) . '" /><label for="shareopenly_text">' . esc_html( 'The sharing text that will be displayed' ) . '</label>';
 }
 
 /**
@@ -159,5 +159,5 @@ function shareopenly_priority_callback() {
 	$options = shareopenly_get_settings();
 	$type    = $options['priority'];
 
-	echo '<input name="shareopenly_priority" min="1" max="9999" type="number" value="' . esc_html( $type ) . '" /><label for="shareopenly_text">' . esc_html( 'The priority of the sharing message on the page' ) . '</label>';
+	echo '<input name="shareopenly_priority" min="1" max="9999" type="number" value="' . esc_attr( $type ) . '" /><label for="shareopenly_text">' . esc_html( 'The priority of the sharing message on the page' ) . '</label>';
 }
