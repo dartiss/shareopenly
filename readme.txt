@@ -3,7 +3,7 @@ Contributors: dartiss, jeherve, mediaformat
 Donate link: https://artiss.blog/donate
 Tags: share, openly, social media, mastodon, threads
 Requires at least: 4.6
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.0
 Stable tag: 1.2.1
 License: GPLv2 or later
