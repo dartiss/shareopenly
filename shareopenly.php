@@ -45,3 +45,5 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/shared.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/settings.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'inc/add-sharing-link.php';
+
+require_once plugin_dir_path( __FILE__ ) . 'inc/block.php';
