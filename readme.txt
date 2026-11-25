@@ -5,7 +5,7 @@ Tags: share, openly, social media, mastodon, threads
 Requires at least: 4.6
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.2.1
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 README revision: 1.0
@@ -13,6 +13,8 @@ README revision: 1.0
 The official plugin for [ShareOpenly](https://shareopenly.org/) - adding modern, open social media sharing links to your website. Share openly.
 
 == Description ==
+
+**Note about ShareOpenly v1.3 onwards: this plugin may no longer work in a block theme on WordPress versions prior to to 6.4**
 
 You know all those "share to Facebook" / "share to Twitter" links you see all over peoples’ websites? They’re all out of date.
 
@@ -104,6 +106,9 @@ By default, the link that is displayed has an accessible name (although this can
 
 I use semantic versioning, with the first release being 1.0
 
+= 1.3 =
+* Enhancement: The sharing link was added via the_content, so it also showed up everywhere else that filter runs: the REST API, plugins that render the content on their own, and the ActivityPub plugin, which federates it to the Fediverse. This change now only displays the link when the theme shows the post. Thanks to [Matthias Pfefferle](https://github.com/pfefferle) for the suggestion and code change
+
 = 1.2.1 =
 * Enhancement: Fixed cross-site scripting (XSS) vulnerabilities ([CVE-2026-48094](https://www.cve.org/CVERecord?id=CVE-2026-48094)), as reported by [Blacksolo](https://github.com/blacksolo1)
 * Enhancement: Fixed a number of other, potential, security issues in the code too
@@ -125,9 +130,9 @@ I use semantic versioning, with the first release being 1.0
 * Enhancement: Added a description to the ShareOpenly settings section (thanks to Jeremy Herve for this change)
 
 = 1.0 =
-* Initial release.
+* Initial release
 
 == Upgrade Notice ==
 
-= 1.2.1 =
-* Fixed a reported security vulnerability, along with a number of other security changes
+= 1.3 =
+* Improvement to when the sharing link is shown
