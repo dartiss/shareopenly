@@ -21,6 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function shareopenly_add_to_content( $content ) {
 
+	// Only add the link to the post the theme displays, not to content rendered elsewhere (REST API, ActivityPub, other plugins).
+	if ( ! in_the_loop() || ! is_main_query() ) {
+		return $content;
+	}
+
 	$settings           = shareopenly_get_settings();
 	$support_post_types = $settings['type'];
 
